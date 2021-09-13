@@ -1,6 +1,55 @@
+html {
+  background-color: rgb(32, 32, 32);
+  padding: 50px;
+}
+
 body {
   color: white;
   background-color: black;
   max-width: 920px;
+  min-height: 800px;
+  padding: 50px;
   margin: 0 auto;
+  font-family: 'Courgette', cursive;
+  border-radius: 25px;
+  text-align: center;
+}
+
+#horoscopo {
+  min-height: 600px;
+  width: 60%;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.sign {
+  width: 30%;
+  border: 5px solid white;
+  border-radius: 50%;
+  margin-top: 60px;
+  z-index: -10;
+  box-shadow:
+    0 0 30px 15px #fff,
+    /* inner white */
+    0 0 50px 30px #f0f,
+    /* middle magenta */
+    0 0 70px 45px #0ff;
+  /* outer cyan */
+}
+
+.btn {
+  padding: 10px 50px;
+  background-color: red;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  padding: 10px 50px;
+  background-color: rgb(121, 0, 0);
+  border: 2px solid white;
+}
+
+.buttons {
+  margin: 40px 0;
 }
