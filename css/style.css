@@ -1,22 +1,25 @@
 html {
   background-color: rgb(32, 32, 32);
-  padding: 50px;
+  padding: 30px;
 }
 
 body {
-  color: white;
-  background-color: black;
   max-width: 920px;
-  min-height: 800px;
   padding: 50px;
   margin: 0 auto;
   font-family: 'Courgette', cursive;
   border-radius: 25px;
   text-align: center;
+  /* Gradient Background */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 85vh;
 }
 
+
 #horoscopo {
-  min-height: 600px;
+  min-height: 30px;
   width: 60%;
   margin: 0 auto;
   z-index: 10;
@@ -42,6 +45,7 @@ body {
   background-color: red;
   border: 1px solid white;
   cursor: pointer;
+  color: white;
 }
 
 .btn:hover {
@@ -51,5 +55,58 @@ body {
 }
 
 .buttons {
-  margin: 40px 0;
+  position: fixed;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 5px;
+    height: 95vh;
+  }
+
+  html {
+    padding: 10px;
+
+  }
+
+  #horoscopo {
+    min-height: 30px;
+    width: 90%;
+    margin: 0 auto;
+    z-index: 10;
+  }
+
+  .sign {
+    width: 45%;
+    margin-top: 30px;
+  }
+
+  .buttons {
+    position: fixed;
+    top: 90%;
+    left: 25%;
+    transform: translate(0, 0);
+  }
+}
+
+@media only screen and (min-width: 481px) {}
+
+@media only screen and (min-width: 1024px) {}
