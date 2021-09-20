@@ -1,13 +1,14 @@
-console.log('Init app....')
+// console.log('Init app....')
 
 $(function () {
   'use strict'
 
+  // VARIABLES
   let horoscopo = $('#horoscopo')
   let buttonNext = $('#buttonNext')
   let index = 0
-
   let $tarot = []
+
   let imageSigns = [
     'assets/Aries.png',
     'assets/Tauro.png',
@@ -23,6 +24,7 @@ $(function () {
     'assets/Piscis.png',
   ]
 
+  // FUNCTIONS
   const storeTarot = (tarot) => {
     $tarot = tarot
   }
@@ -41,20 +43,22 @@ $(function () {
         Salud: ${$tarot[index].salud}
       </p>`
     )
-    console.log('index:', index)
+    // console.log('index:', index)
   }
 
   const clearTarot = () => {
     horoscopo.empty()
   }
 
+  // FETCH TAROT ON INIT
   $.get(`https://api.adderou.cl/tyaas/`, function showHoroscopo(res) {
     // console.log(Object.values(res.horoscopo))
     storeTarot(Object.values(res.horoscopo))
-    console.log('$tarot:', $tarot)
+    // console.log('$tarot:', $tarot)
     appendTarot()
   })
 
+  // BUTTON LOGIC
   buttonNext.click(function () {
     index = index + 1
     if (index > 11) index = 0
